@@ -16,6 +16,7 @@ routes.get('/', function(req, res) {
     return res.render('layout.njk')
 }) 
 routes.get('/products/create', ProductController.create)
+routes.get('/products/:id', ProductController.show)
 routes.post('/products', multer.array("photos", 6), ProductController.post)
 routes.put('/products', multer.array("photos", 6), ProductController.put)
 routes.get('/products/:id/edit', ProductController.edit)
